@@ -1,0 +1,23 @@
+<script>
+function login(){
+
+    var user=document.getElementById("user").value;
+    var pass=document.getElementById("pass").value;
+    var msg=document.getElementById("message");
+
+    if(user=="admin" && pass=="12345"){
+        msg.innerHTML="🎉 Login Successful...";
+        msg.style.color="#00ff99";
+
+        // Open Landing Page
+        setTimeout(function(){
+            window.location.href="landing.html";
+        },1000);
+    }
+    else{
+        msg.innerHTML="❌ Invalid Username or Password";
+        msg.style.color="yellow";
+    }
+
+}
+</script>
