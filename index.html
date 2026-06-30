@@ -1,23 +1,57 @@
-<script>
-function login(){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bus Booking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    var user=document.getElementById("user").value;
-    var pass=document.getElementById("pass").value;
-    var msg=document.getElementById("message");
+<div class="container">
+    <h1>Bus Booking System</h1>
 
-    if(user=="admin" && pass=="12345"){
-        msg.innerHTML="🎉 Login Successful...";
-        msg.style.color="#00ff99";
+    <form id="bookingForm">
+        <input type="text" id="name" placeholder="Enter Your Name" required>
 
-        // Open Landing Page
-        setTimeout(function(){
-            window.location.href="landing.html";
-        },1000);
-    }
-    else{
-        msg.innerHTML="❌ Invalid Username or Password";
-        msg.style.color="yellow";
-    }
+        <select id="from" required>
+            <option value="">From</option>
+            <option>Nagpur</option>
+            <option>Pune</option>
+            <option>Mumbai</option>
+        </select>
 
-}
-</script>
+        <select id="to" required>
+            <option value="">To</option>
+            <option>Pune</option>
+            <option>Mumbai</option>
+            <option>Nagpur</option>
+        </select>
+
+        <input type="date" id="date" required>
+
+        <h3>Select Seat</h3>
+
+        <div class="seats">
+            <div class="seat" onclick="selectSeat(this)">1</div>
+            <div class="seat" onclick="selectSeat(this)">2</div>
+            <div class="seat" onclick="selectSeat(this)">3</div>
+            <div class="seat" onclick="selectSeat(this)">4</div>
+            <div class="seat" onclick="selectSeat(this)">5</div>
+            <div class="seat" onclick="selectSeat(this)">6</div>
+            <div class="seat" onclick="selectSeat(this)">7</div>
+            <div class="seat" onclick="selectSeat(this)">8</div>
+        </div>
+
+        <input type="hidden" id="seat">
+
+        <button type="submit">Book Now</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
